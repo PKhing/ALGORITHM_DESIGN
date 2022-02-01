@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "Build",
+      "command": "C:\\MinGW\\bin\\g++.exe",
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": "build",
+      "detail": "compiler: C:\\MinGW\\bin\\g++.exe"
+    },
+    {
+      "label": "Run",
+      "command": "${fileDirname}\\${fileBasenameNoExtension}.exe"
+    },
+    {
+      "label": "Clean",
+      "type": "shell",
+      "command": "rm ${fileDirname}\\${fileBasenameNoExtension}.exe"
+    },
+    {
+      "label": "Build and Run",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "dependsOrder": "sequence",
+      "dependsOn": ["Build", "Run"]
+    }
+  ]
+}
